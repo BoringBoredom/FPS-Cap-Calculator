@@ -5,9 +5,9 @@ const result = document.getElementById('result')
 
 
 function calculateCap() {
-    let refreshRate = parseInt(refreshRateE.value)
-    let minFps = parseInt(minFpsE.value)
-    let maxFps = parseInt(maxFpsE.value)
+    const refreshRate = parseInt(refreshRateE.value)
+    const minFps = parseInt(minFpsE.value)
+    const maxFps = parseInt(maxFpsE.value)
 
     if (isNaN(minFps) || isNaN(maxFps) || isNaN(refreshRate) || refreshRate == 0 || maxFps == 0 || maxFps < minFps) {
         result.innerHTML = ''
@@ -47,7 +47,7 @@ function calculateCap() {
     }
 
     viableFpsCaps.sort((a, b) => a - b)
-    sortedViableFpsCaps = [...new Set(viableFpsCaps)]
+    const sortedViableFpsCaps = [...new Set(viableFpsCaps)]
 
     let index = 0
     let caps = ''
