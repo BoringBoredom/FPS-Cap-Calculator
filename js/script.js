@@ -3,13 +3,12 @@ const minFpsE = document.getElementById('min-fps')
 const maxFpsE = document.getElementById('max-fps')
 const result = document.getElementById('result')
 
-
 function calculateCap() {
     const refreshRate = parseInt(refreshRateE.value)
     const minFps = parseInt(minFpsE.value)
     const maxFps = parseInt(maxFpsE.value)
 
-    if (isNaN(minFps) || isNaN(maxFps) || isNaN(refreshRate) || refreshRate == 0 || maxFps == 0 || maxFps < minFps) {
+    if (isNaN(minFps) || isNaN(maxFps) || isNaN(refreshRate) || refreshRate <= 0 || maxFps <= 0 || minFps < 0 || maxFps < minFps) {
         result.innerHTML = ''
         return
     }
@@ -49,20 +48,13 @@ function calculateCap() {
     viableFpsCaps.sort((a, b) => a - b)
     const sortedViableFpsCaps = [...new Set(viableFpsCaps)]
 
-    let index = 0
     let caps = ''
     for (const fpsCap of sortedViableFpsCaps) {
-        if (index < sortedViableFpsCaps.length - 1) {
-            caps += fpsCap.toString() + ', '
-            index += 1
-        }
-        else {
-            caps += fpsCap.toString()
-        }
+        caps += fpsCap.toString() + ', '
     }
+    caps = caps.slice(0, caps.length - 2)
     result.innerHTML = caps
 }
-
 
 refreshRateE.addEventListener('input', () => {
     calculateCap()

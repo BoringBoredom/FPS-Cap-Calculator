@@ -7,15 +7,16 @@
 </head>
 
 <body>
-    <div>
-        <a href="https://github.com/BoringBoredom/PC-Optimization-Hub/blob/main/README.md#capping-fps">Why cap FPS?</a>
+    <div style="text-align: center;">
+        <a href="https://github.com/BoringBoredom/PC-Optimization-Hub/blob/main/README.md#capped-fps-vs-vrr-vs-uncapped-fps">Why cap FPS?</a>
         <br><br>
-        <label>Refresh rate:</label> <input id="refresh-rate" type="text" value="360">
-        <br><br>
-        <label>Minimum FPS:</label> <input id="min-fps" type="text" value="30">
-        <br><br>
-        <label>Maximum FPS:</label> <input id="max-fps" type="text" value="2000">
-        <br><br>
+        <label>Refresh rate:</label> <input id="refresh-rate" type="number" value="360" min="1">
+        <br>
+        <label>Minimum FPS:</label> <input id="min-fps" type="number" value="30" min="0">
+        <br>
+        <label>Maximum FPS:</label> <input id="max-fps" type="number" value="2000" min="1">
+        <br>
+        <br>
         <label>Viable FPS caps:</label> <p id="result"></p>
     </div>
 
