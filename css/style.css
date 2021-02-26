@@ -10,3 +10,7 @@ label {
 input {
     margin: 10px;
 }
+
+div {
+    text-align: center;
+}
